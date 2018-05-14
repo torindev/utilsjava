@@ -5,144 +5,208 @@ import java.util.Locale;
 
 public class Lgi {
 
+    public static boolean LOG = true;
     private static final String SEPAR = ": ";
     private static long sStartTime = 0;
 
     // Выводит в лог имя класса и имя метода, в котором был вызван
     public static void p() {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]");
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]");
+        }
     }
 
     // Выводит в лог имя класса + String переданный в параметре
     public static void p(String s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]" + SEPAR + s);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
     }
 
     public static void p(int s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]" + SEPAR + s);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
     }
 
     public static void p(double s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]" + SEPAR + s);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
     }
 
     public static void p(float s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]" + SEPAR + s);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
     }
 
     public static void p(long s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]" + SEPAR + s);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
     }
 
     public static void p(char s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]" + SEPAR + s);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
     }
 
     public static void p(byte s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]" + SEPAR + s);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
     }
 
     public static void p(boolean s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        log("[" + className + "." + method + "]" + SEPAR + s);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
     }
 
     public static void p(char[] s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        StringBuilder sb = new StringBuilder("");
-        for (char c : s) {
-            sb.append(c);
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            StringBuilder sb = new StringBuilder("");
+            for (char c : s) {
+                sb.append(c);
+            }
+            log("[" + className + "." + method + "]" + SEPAR + sb.toString());
         }
-        log("[" + className + "." + method + "]" + SEPAR + sb.toString());
     }
 
     public static void p(long[] s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        StringBuilder sb = new StringBuilder("");
-        for (long c : s) {
-            sb.append(c).append("; ");
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            StringBuilder sb = new StringBuilder("");
+            for (long c : s) {
+                sb.append(c).append("; ");
+            }
+            log("[" + className + "." + method + "]" + SEPAR + sb.toString());
         }
-        log("[" + className + "." + method + "]" + SEPAR + sb.toString());
     }
 
     public static void p(List<String> s) {
-        StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
-        String className = ste.getFileName().split("\\.")[0];
-        String method = ste.getMethodName();
-        StringBuilder sb = new StringBuilder("");
-        for (String c : s) {
-            sb.append(c).append("; ");
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            StringBuilder sb = new StringBuilder("");
+            for (String c : s) {
+                sb.append(c).append("; ");
+            }
+            log("[" + className + "." + method + "]" + SEPAR + sb.toString());
         }
-        log("[" + className + "." + method + "]" + SEPAR + sb.toString());
     }
 
     public static void userOut(String s) {
-        log(s + "");
+        if (LOG) {
+            log(s + "");
+        }
     }
 
     public static void userOut(char s) {
-        log(s + "");
+        if (LOG) {
+            log(s + "");
+        }
     }
 
     public static void userOut(int s) {
-        log(s + "");
+        if (LOG) {
+            log(s + "");
+        }
     }
 
     public static void userOut(long s) {
-        log(s + "");
+        if (LOG) {
+            log(s + "");
+        }
     }
 
     public static void userOut(boolean s) {
-        log(s + "");
+        if (LOG) {
+            log(s + "");
+        }
     }
 
     public static void userOut(float s) {
-        log(s + "");
+        if (LOG) {
+            log(s + "");
+        }
     }
 
     public static void userOut(double s) {
-        log(s + "");
+        if (LOG) {
+            log(s + "");
+        }
     }
 
     // просто перенос строки
     public static void separatorLine() {
-        log("\t-\t-\t-\t-\t-");
+        if (LOG) {
+            log("\t-\t-\t-\t-\t-");
+        }
     }
 
     // выводит в лог String s и Exception
-    public static void lEx(String s, Exception ex) {
-        log(s);
-        System.out.println(ex);
+    public static void err(String s, Exception ex) {
+        if (LOG) {
+            log(s);
+            System.out.println(ex);
+        }
+    }
+
+    // выводит класс, метод, и строку, в которой был вызван
+    public static void err() {
+        if (LOG) {
+            StackTraceElement ste = null;
+            ste = Thread.currentThread().getStackTrace()[2];
+            String str = ste.getClassName() + "." + ste.getMethodName() +
+                    "(" + ste.getFileName() + ":" + ste.getLineNumber() + ")";
+            log(str);
+        }
+    }
+    // выводит класс, метод, и строку, в которой был вызван + текст
+    public static void err(String s) {
+        if (LOG) {
+            StackTraceElement ste = null;
+            ste = Thread.currentThread().getStackTrace()[2];
+            String str = ste.getClassName() + "." + ste.getMethodName() +
+                    "(" + ste.getFileName() + ":" + ste.getLineNumber() + ")";
+            log(str + " > " + s);
+        }
     }
 
 
@@ -154,22 +218,7 @@ public class Lgi {
         return Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
     }
 
-    // выводит класс, метод, и строку, в которой был вызван
-    public static void err() {
-        StackTraceElement ste = null;
-        ste = Thread.currentThread().getStackTrace()[2];
-        String str = ste.getClassName() + "." + ste.getMethodName() +
-                "(" + ste.getFileName() + ":" + ste.getLineNumber() +")";
-        log(str);
-    }
-    // выводит класс, метод, и строку, в которой был вызван + текст
-    public static void err(String s) {
-        StackTraceElement ste = null;
-        ste = Thread.currentThread().getStackTrace()[2];
-        String str = ste.getClassName() + "." + ste.getMethodName() +
-                "(" + ste.getFileName() + ":" + ste.getLineNumber() +")";
-        log(str + " > " + s);
-    }
+
 
     // используется для замера промежутка времени
     public static void startTime() {
