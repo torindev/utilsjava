@@ -1,3 +1,5 @@
+package main;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -92,6 +94,15 @@ public class Lgi {
         }
     }
 
+    public static void p(Object s) {
+        if (LOG) {
+            StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+            String className = ste.getFileName().split("\\.")[0];
+            String method = ste.getMethodName();
+            log("[" + className + "." + method + "]" + SEPAR + s);
+        }
+    }
+
     public static void p(char[] s) {
         if (LOG) {
             StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
@@ -129,6 +140,32 @@ public class Lgi {
             }
             log("[" + className + "." + method + "]" + SEPAR + sb.toString());
         }
+    }
+
+    public static void pl(String s) {
+        if (LOG) {
+            if (LOG) {
+                /*StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+                String className = ste.getFileName().split("\\.")[0];
+                String method = ste.getMethodName();*/
+                logl(s + "; ");
+            }
+        }
+    }
+
+    public static void pl(char s) {
+        if (LOG) {
+            if (LOG) {
+                /*StackTraceElement ste = Thread.currentThread().getStackTrace()[2];
+                String className = ste.getFileName().split("\\.")[0];
+                String method = ste.getMethodName();*/
+                logl(s + "; ");
+            }
+        }
+    }
+
+    public static String thread() {
+        return Thread.currentThread().getName();
     }
 
     public static void userOut(String s) {
@@ -184,6 +221,12 @@ public class Lgi {
     public static void err(String s, Exception ex) {
         if (LOG) {
             log(s);
+            System.out.println(ex);
+        }
+    }
+
+    public static void err(Throwable ex) {
+        if (LOG) {
             System.out.println(ex);
         }
     }
@@ -248,5 +291,9 @@ public class Lgi {
 
     private static void log(String s) {
         System.out.println(s);
+    }
+
+    private static void logl(String s) {
+        System.out.print(s);
     }
 }
